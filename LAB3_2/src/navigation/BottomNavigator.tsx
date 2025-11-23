@@ -1,50 +1,42 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from '../screens/HomeScreen';
-import AddNoteScreen from '../screens/AddNoteScreen';
-import SettingScreen from '../screens/SettingScreen';
-import { Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { HomeStack } from "./StackNavigator";
+import SettingsScreen from "../screens/SettingScreen";
+import { Ionicons } from "@expo/vector-icons";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useAppTheme } from "../store/useAppTheme";
 
 
-const Tabs = createBottomTabNavigator<any>();
+const Bottom = createBottomTabNavigator();
 
-const BottomNavigator = () => {
+export const BottomNavigator = () => {
+  const colors = useAppTheme();
   return (
-    <Tabs.Navigator>
-        <Tabs.Screen
-            name = "Home"
-            component={HomeScreen}
-            options={{
-              tabBarIcon: ({color, size}) => (
-                <Ionicons name = 'home-outline' color = {color} size = {size}/>
-              )
-            }}
-            
+    <Bottom.Navigator screenOptions={{
+        tabBarStyle: { backgroundColor: colors.headerBg },
+        headerStyle: { backgroundColor: colors.headerBg },
+        headerTintColor: colors.headerText,
+        headerTitleStyle: { fontWeight: "bold" }
+    }}>
+      <Bottom.Screen
+        component={HomeStack}
+        name="HomeStack"
+        options={{
+          title: 'Home',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <Bottom.Screen 
+        component={SettingsScreen} 
+        name="Settings"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="gear" size={size} color={color} />
+          ),
+        }}
         />
-
-         <Tabs.Screen
-            name = "Add Note"
-            component={AddNoteScreen}
-             options={{
-              tabBarIcon: ({color, size}) => (
-                <Ionicons name = 'add' color = {color} size = {size}/>
-              )
-            }}
-            
-        />
-
-         <Tabs.Screen
-            name = "Setting"
-            component={SettingScreen}
-            options={{
-              tabBarIcon: ({color, size}) => (
-                <Ionicons name = 'book' color = {color} size = {size}/>
-              )
-            }}
-            
-        />
-    </Tabs.Navigator>
-  )
-}
-
-export default BottomNavigator;
+    </Bottom.Navigator>
+  );
+};

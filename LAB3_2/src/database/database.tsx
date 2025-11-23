@@ -1,22 +1,23 @@
-import React from 'react'
-import { SQLiteDatabase, SQLiteProvider } from 'expo-sqlite'
-import AppNavigation from '../navigation/BottomNavigator';
+import { StyleSheet} from "react-native";
+import React from "react";
+import { SQLiteDatabase, SQLiteProvider } from "expo-sqlite";
+import AppNavigator from "../navigation/AppNavigator";
 
 
-const database = () => {
-  return (
-    <SQLiteProvider databaseName='note.db' onInit = {migrateDbIfNeed}>
-      <AppNavigation/>
-    </SQLiteProvider>
-  );
+const Database = () => {
+	return (
+		<SQLiteProvider databaseName="test.db" onInit={migrateDbIfNeeded}>
+			<AppNavigator/>
+		</SQLiteProvider>
+	);
 };
 
-async function migrateDbIfNeed(db: SQLiteDatabase) {
-    await db.runAsync('PRAGMA journal_mode = WAL;');
-    await db.execAsync(`
-        CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY AUTOINCREMENT, tittle TEXT NOT NULL, content TEXT);
+async function migrateDbIfNeeded(db: SQLiteDatabase) {
+	await db.execAsync(`
+        PRAGMA journal_mode = 'wal';
+        CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, content TEXT);
     `);
 }
 
-export default database
+export default Database;
 

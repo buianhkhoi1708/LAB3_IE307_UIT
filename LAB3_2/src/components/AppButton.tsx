@@ -1,33 +1,26 @@
-import { Button, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { StyleSheet, Pressable} from "react-native";
+import React, { ReactNode } from "react";
 
 interface AppButton {
-  butName: string;
-  style?: AppBut | AppBut[];
-  style1?: AppBut1 | AppBut1[];
-  onPress?: () => void;
+    children: ReactNode;
+    style?: ButtonStyle[] | ButtonStyle;
+    onPress?: () => void;
 }
 
-const AppButton = ({ butName, style, style1, onPress}: AppButton) => {
+const AppButton = ({children, style, onPress} : AppButton) => {
   return (
-    <View style={[styles.container, style]}>
-      <View style = {[styles.button, style1 ]}>
-        <Button title={butName} color='white' onPress={onPress}/>
-      </View>
-    </View>
+    <Pressable style = {[style, styles.button]} onPress={onPress}>
+        {children}
+    </Pressable>
   );
 };
 
 export default AppButton;
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 40,
-  },
-  button: {
-    backgroundColor: '#fc7f31ff',
-    borderRadius: 10,
-    height: 50,
-    justifyContent: 'center',
-  }
+    button: {
+        borderRadius: '50%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });

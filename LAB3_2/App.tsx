@@ -1,7 +1,7 @@
-import AppNavigator from "@/navigation/AppNavigator";
+import Database from "./src/database/database";
 
 export default function App() {
-  return(
-    <AppNavigator/>
+  return (
+    <Database/>
   );
-};
+}
