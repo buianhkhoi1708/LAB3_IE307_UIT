@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import AppSafeView from "@/components/AppSafeView";
@@ -11,7 +12,7 @@ const RegisterScreen = () => {
   const navigation = useNavigation<any>();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(" ");
+  const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
 
   return (

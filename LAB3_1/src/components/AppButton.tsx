@@ -1,5 +1,7 @@
+// Bùi Anh Khôi - 23520759
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { AppLightColor } from "@/styles/color";
 
 interface AppButton {
   butName: string;
@@ -8,11 +10,11 @@ interface AppButton {
   onPress?: () => void;
 }
 
-const AppButton = ({ butName, style, style1, onPress}: AppButton) => {
+const AppButton = ({ butName, style, style1, onPress }: AppButton) => {
   return (
     <View style={[styles.container, style]}>
-      <View style = {[styles.button, style1 ]}>
-        <Button title={butName} color='white' onPress={onPress}/>
+      <View style={[styles.button, style1]}>
+        <Button title={butName} color="white" onPress={onPress} />
       </View>
     </View>
   );
@@ -25,9 +27,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
   },
   button: {
-    backgroundColor: '#fc7f31ff',
+    backgroundColor: AppLightColor.buttonColor,
     borderRadius: 10,
     height: 50,
-    justifyContent: 'center',
-  }
+    justifyContent: "center",
+  },
 });

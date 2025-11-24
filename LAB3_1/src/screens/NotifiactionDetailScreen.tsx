@@ -1,21 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import AppSafeView from '@/components/AppSafeView'
-import AppText from '@/components/AppText'
+// Bùi Anh Khôi - 23520759
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import AppSafeView from "@/components/AppSafeView";
+import AppText from "@/components/AppText";
 
 const NotifiactionDetailScreen = () => {
   return (
-    <AppSafeView style = {styles.container}>
-      <AppText variant = 'bold'>NotifiactionDetailScreen</AppText>
+    <AppSafeView style={styles.container}>
+      <AppText variant="bold">NotifiactionDetailScreen</AppText>
     </AppSafeView>
-  )
-}
+  );
+};
 
-export default NotifiactionDetailScreen
+export default NotifiactionDetailScreen;
 
 const styles = StyleSheet.create({
-   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-})
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

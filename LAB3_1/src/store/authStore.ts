@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { create } from "zustand";
 
 type User = { email: string } | null;
@@ -18,7 +19,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   login: async (email, password) => {
     if (email !== my_email)
-        return {ok: false, msg: "Incorrect email or password"}
+      return { ok: false, msg: "Incorrect email or password" };
     if (password !== my_password)
       return { ok: false, msg: "Incorrect email or password" };
     set({ user: { email } });

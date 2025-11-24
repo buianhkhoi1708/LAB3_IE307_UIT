@@ -1,6 +1,8 @@
-import { ComponentProps, ReactNode } from "react";
+// Bùi Anh Khôi - 23520759
+import { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppFonts } from "@/styles/fonts";
+import { AppLightColor } from "@/styles/color";
 
 type AppTextVariant = "bold" | "medium" | "light";
 
@@ -21,16 +23,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     fontFamily: AppFonts.RobotoBold,
-    color: "#000",
+    color: AppLightColor.primary_text,
   },
   medium: {
     fontSize: 18,
     fontFamily: AppFonts.RobotoMedium,
-    color: "#000",
+    color: AppLightColor.primary_text,
   },
   light: {
     fontSize: 16,
     fontFamily: AppFonts.RobotoLight,
-    color: "#000",
+    color: AppLightColor.primary_text,
   },
 });

@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import AppText from "@/components/AppText";

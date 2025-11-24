@@ -1,17 +1,17 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+// Bùi Anh Khôi - 23520759
+import { StyleSheet, View, Image } from "react-native";
 import React from "react";
-import AppText from "./AppText"
-
+import AppText from "./AppText";
+import { AppLightColor } from "@/styles/color";
 
 interface AppLogo {
   text: string;
 }
 
-const AppLogo = ({text} : AppLogo) => {
-
+const AppLogo = ({ text }: AppLogo) => {
   return (
     <View style={styles.container}>
-      <View style={[styles.logo_con,]}>
+      <View style={[styles.logo_con]}>
         <Image source={require("../assets/images/logo.png")} />
       </View>
       <AppText variant="bold" style={styles.text}>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 5,
-    backgroundColor: "#2e2e2eff",
+    backgroundColor: AppLightColor.logoBg,
   },
   text: {
     fontSize: 26,

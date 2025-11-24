@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import AppSafeView from "@/components/AppSafeView";
@@ -36,6 +37,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    backgroundColor: "blue",
+    backgroundColor: AppLightColor.button1Color,
   },
 });

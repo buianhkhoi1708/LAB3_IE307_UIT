@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import AppLogo from "@/components/AppLogo";
 import AppSafeView from "@/components/AppSafeView";
 import AppTextInput from "@/components/AppTextInput";
@@ -8,6 +9,7 @@ import AppNavText from "@/components/AppNavText";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useAuthStore } from "@/store/authStore";
+import { AppLightColor } from "@/styles/color";
 
 export default function LoginScreen() {
   const navigation = useNavigation<any>();
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   text: {
-    color: "#ff078bf1",
+    color: AppLightColor.forgotText,
     fontSize: 14,
   },
   button: {

@@ -1,10 +1,9 @@
+// Bùi Anh Khôi - 23520759
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import type { AuthStackParamList } from "@/types/navigation";
 import LoginScreen from "@/screens/AuthScreen/LoginScreen";
 import RegisterScreen from "@/screens/AuthScreen/RegisterScreen";
 
-
-const Stack = createNativeStackNavigator<AuthStackParamList>();
+const Stack = createNativeStackNavigator<any>();
 
 export default function AuthNavigator() {
   return (

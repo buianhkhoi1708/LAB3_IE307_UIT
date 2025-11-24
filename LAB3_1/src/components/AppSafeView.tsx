@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, Text, View, ViewStyle } from "react-native";
 import React, { ReactNode } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -8,15 +9,10 @@ interface AppSafeView {
 }
 
 const AppSafeView = ({ children, style }: AppSafeView) => {
-
   return (
     <SafeAreaProvider>
-      <SafeAreaView  style={styles.appSafeArea}>
-        <View
-          style={[style, styles.appView, ]}
-        >
-          {children}
-        </View>
+      <SafeAreaView style={styles.appSafeArea}>
+        <View style={[style, styles.appView]}>{children}</View>
       </SafeAreaView>
     </SafeAreaProvider>
   );

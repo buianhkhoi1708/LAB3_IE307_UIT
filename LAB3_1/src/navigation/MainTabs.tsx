@@ -1,6 +1,7 @@
+// Bùi Anh Khôi - 23520759
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TouchableOpacity, View } from 'react-native';
-import { DrawerActions } from '@react-navigation/native';
+import { TouchableOpacity, View } from "react-native";
+import { DrawerActions } from "@react-navigation/native";
 import HomeScreen from "@/screens/HomeScreen";
 import CategoryScreen from "@/screens/CategoryScreen";
 import FavoriteScreen from "@/screens/FavoriteScreen";
@@ -10,11 +11,10 @@ import ProfileScreen from "@/screens/AccountScreen";
 import { useNavigation } from "@react-navigation/native";
 import { TopNavigator } from "./TopNavigator";
 
-
 const Tab = createBottomTabNavigator<any>();
 
 export default function MainTabs() {
-  const navigation = useNavigation
+  const navigation = useNavigation;
 
   return (
     <Tab.Navigator
@@ -22,15 +22,15 @@ export default function MainTabs() {
         tabBarActiveTintColor: "#3f6fffff",
       }}
     >
-     <Tab.Screen
+      <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={({ navigation }) => ({
           headerShown: true,
           title: "Home",
           headerLeft: () => (
-            <TouchableOpacity 
-              onPress={() => navigation.dispatch(DrawerActions.openDrawer)} 
+            <TouchableOpacity
+              onPress={() => navigation.dispatch(DrawerActions.openDrawer)}
               style={{ marginLeft: 15 }}
             >
               <Ionicons name="menu" size={24} color="black" />
@@ -58,7 +58,7 @@ export default function MainTabs() {
           tabBarIcon: ({ size, color }) => (
             <Ionicons name="heart" size={size} color={color} />
           ),
-          tabBarBadge: 3, // theo yêu cầu bài
+          tabBarBadge: 3,
         }}
       />
       <Tab.Screen
