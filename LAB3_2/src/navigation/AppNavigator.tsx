@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { NavigationContainer } from "@react-navigation/native";
 import { BottomNavigator } from "./BottomNavigator";
 

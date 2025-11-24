@@ -1,4 +1,4 @@
-// src/hooks/useAppTheme.ts
+// Bùi Anh Khôi - 23520759
 import { useStore } from "../store/useStore";
 import { AppLightColor, AppDarkColor } from "../styles/color";
 

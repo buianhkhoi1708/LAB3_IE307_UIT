@@ -1,4 +1,4 @@
-import { StyleSheet} from "react-native";
+// Bùi Anh Khôi - 23520759
 import React from "react";
 import { SQLiteDatabase, SQLiteProvider } from "expo-sqlite";
 import AppNavigator from "../navigation/AppNavigator";

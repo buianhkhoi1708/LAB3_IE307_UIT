@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, TextInput, View } from "react-native";
 import React from "react";
 import { useAppTheme } from "../store/useAppTheme";

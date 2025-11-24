@@ -1,5 +1,5 @@
+// Bùi Anh Khôi - 23520759
 import { useNavigation } from "@react-navigation/native";
-import {StyleSheet } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import HomeScreen from "../screens/HomeScreen";
 import AddNoteScreen from "../screens/AddNoteScreen";

@@ -1,14 +1,12 @@
+// Bùi Anh Khôi - 23520759
 import {
-  Button,
   StyleSheet,
-  Text,
   View,
   Pressable,
   ScrollView,
 } from "react-native";
 import React, {
   useCallback,
-  useEffect,
   useLayoutEffect,
   useState,
 } from "react";
@@ -54,7 +52,7 @@ const HomeScreen = () => {
 
   return (
     <AppSafeView
-      style={[styles.contentContainer, { backgroundColor: colors.bgColor }]}
+      style={[{ backgroundColor: colors.bgColor}]}
     >
       <AppText
         variant="bold"
@@ -122,7 +120,6 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  contentContainer: {},
   todoItemContainer: {
     flexDirection: "row",
     justifyContent: "space-between",

@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, Pressable} from "react-native";
 import React, { ReactNode } from "react";
 

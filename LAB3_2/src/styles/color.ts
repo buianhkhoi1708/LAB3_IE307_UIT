@@ -1,4 +1,4 @@
-
+// Bùi Anh Khôi - 23520759
 export const AppLightColor = {
   bgColor: "#FFFFFF",         
   cardBg: "#F5F5F5",            
@@ -9,7 +9,8 @@ export const AppLightColor = {
   iconColor: "#000000", 
   button1Color: "red",
   button2Color: "green", 
-  borderColor: "#b0b0b0ff",   
+  borderColor: "#b0b0b0ff",
+  switchColor: "blue",   
 };
 
 export const AppDarkColor = {

@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import React, { useState } from "react";
 import { StyleSheet, View, Alert } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";

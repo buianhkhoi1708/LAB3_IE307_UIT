@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { StyleSheet, Alert, View } from "react-native";
 import React, { useState } from "react";
 import { AppDarkColor, AppLightColor } from "../styles/color";

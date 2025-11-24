@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeStack } from "./StackNavigator";
 import SettingsScreen from "../screens/SettingScreen";
@@ -18,7 +19,7 @@ export const BottomNavigator = () => {
         tabBarStyle: { backgroundColor: colors.headerBg },
         headerStyle: { backgroundColor: colors.headerBg },
         headerTintColor: colors.headerText,
-        headerTitleStyle: { fontWeight: "bold", fontSize: fontSize}
+        headerTitleStyle: { fontWeight: "bold", fontSize: fontSize},
     }}>
       <Bottom.Screen
         component={HomeStack}

@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, ViewStyle } from "react-native";
+// Bùi Anh Khôi - 23520759
+import { StyleSheet, View, ViewStyle } from "react-native";
 import React, { ReactNode } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 

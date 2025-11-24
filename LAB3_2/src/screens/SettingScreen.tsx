@@ -1,3 +1,4 @@
+// Bùi Anh Khôi - 23520759
 import React from "react";
 import { View, Text, Switch, StyleSheet } from "react-native";
 import Slider from "@react-native-community/slider";
@@ -5,6 +6,7 @@ import { useStore } from "../store/useStore";
 import { useAppTheme } from "../store/useAppTheme";
 import AppSafeView from "../components/AppSafeView"; 
 import AppText from "../components/AppText";
+import { AppLightColor } from "../styles/color";
 
 const SettingsScreen = () => {
   const { isDarkMode, fontSize, toggleTheme, setFontSize } = useStore();
@@ -26,7 +28,7 @@ const SettingsScreen = () => {
         <Switch
           value={isDarkMode}
           onValueChange={toggleTheme}
-          trackColor={{ false: "#767577", true: "orange" }}
+          trackColor={{ false: AppLightColor.borderColor, true: AppLightColor.switchColor }}
           thumbColor={isDarkMode ? "#fff" : "#f4f3f4"}
         />
       </View>
@@ -52,7 +54,7 @@ const SettingsScreen = () => {
             Kích thước chữ
           </Text>
           <Text
-            style={{ color: "orange", fontWeight: "bold", fontSize: fontSize }}
+            style={{ color: colors.primary_text, fontWeight: "bold", fontSize: fontSize }}
           >
             {fontSize}
           </Text>
@@ -65,9 +67,9 @@ const SettingsScreen = () => {
           step={2}
           value={fontSize}
           onValueChange={(val) => setFontSize(val)}
-          minimumTrackTintColor="orange"
+          minimumTrackTintColor={AppLightColor.switchColor}
           maximumTrackTintColor={colors.textSecondary}
-          thumbTintColor="orange"
+          thumbTintColor={AppLightColor.switchColor}
         />
 
     
