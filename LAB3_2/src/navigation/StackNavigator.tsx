@@ -7,6 +7,7 @@ import AppButton from "../components/AppButton";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EditNoteScreen from "../screens/EditNoteScreen";
 import { useAppTheme } from "../store/useAppTheme";
+import { useStore } from "../store/useStore";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,17 +32,19 @@ const navigation = useNavigation();
 
 export const HomeStack = () => {
     const colors = useAppTheme();
+    const fontSize = useStore((state) => state.fontSize);
   return (
     <Stack.Navigator screenOptions={{
         headerStyle: { backgroundColor: colors.headerBg },
         headerTintColor: colors.headerText,
-        headerTitleStyle: { fontWeight: "bold" }
+        headerTitleStyle: { fontWeight: "bold", fontSize: fontSize }
     }}>
       <Stack.Screen
         component={HomeScreen}
         name="HomeScreen"
         options={{
           headerShown: false,
+          headerTitleStyle: { fontWeight: "bold", fontSize: fontSize }
         }}
       />
       <Stack.Screen
@@ -49,6 +52,7 @@ export const HomeStack = () => {
         name="AddNoteScreen"
         options={{
           headerLeft: () => <NavButton/>,
+          headerTitleStyle: { fontWeight: "bold", fontSize: fontSize }
         }}
       />
       <Stack.Screen
@@ -56,6 +60,7 @@ export const HomeStack = () => {
         name="EditNoteScreen"
         options={{
           headerLeft: () => <NavButton/>,
+          headerTitleStyle: { fontWeight: "bold", fontSize: fontSize }
           
         }}
       />

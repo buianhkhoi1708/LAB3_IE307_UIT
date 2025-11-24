@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode } from "react";
+import { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppFonts } from "../styles/fonts";
 
@@ -21,16 +21,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     fontFamily: AppFonts.RobotoBold,
-    color: "#000",
   },
   medium: {
     fontSize: 18,
     fontFamily: AppFonts.RobotoMedium,
-    color: "#000",
   },
   light: {
     fontSize: 16,
     fontFamily: AppFonts.RobotoLight,
-    color: "#000",
   },
 });

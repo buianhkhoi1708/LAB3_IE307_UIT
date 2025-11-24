@@ -3,29 +3,26 @@ import { View, Text, Switch, StyleSheet } from "react-native";
 import Slider from "@react-native-community/slider";
 import { useStore } from "../store/useStore";
 import { useAppTheme } from "../store/useAppTheme";
-import AppSafeView from "../components/AppSafeView"; // Giả sử bạn có component này
+import AppSafeView from "../components/AppSafeView"; 
+import AppText from "../components/AppText";
 
 const SettingsScreen = () => {
-  // 1. Lấy state và hàm thay đổi từ Store
   const { isDarkMode, fontSize, toggleTheme, setFontSize } = useStore();
-
-  // 2. Lấy bộ màu hiện tại
   const colors = useAppTheme();
 
   return (
     <AppSafeView
       style={[styles.container, { backgroundColor: colors.bgColor }]}
     >
-      {/* --- CÀI ĐẶT DARK MODE --- */}
       <View style={[styles.section, { backgroundColor: colors.cardBg }]}>
-        <Text
+        <AppText
           style={{
             color: colors.primary_text,
-            fontSize: fontSize, // Áp dụng font size người dùng chọn
+            fontSize: fontSize, 
           }}
         >
-          Chế độ tối (Dark Mode)
-        </Text>
+          Dark mode
+        </AppText>
         <Switch
           value={isDarkMode}
           onValueChange={toggleTheme}
@@ -34,7 +31,6 @@ const SettingsScreen = () => {
         />
       </View>
 
-      {/* --- CÀI ĐẶT CỠ CHỮ --- */}
       <View
         style={[
           styles.section,
@@ -74,7 +70,7 @@ const SettingsScreen = () => {
           thumbTintColor="orange"
         />
 
-        {/* Text xem trước */}
+    
         <Text
           style={{
             color: colors.primary_text,
@@ -84,7 +80,7 @@ const SettingsScreen = () => {
             fontStyle: "italic",
           }}
         >
-          Văn bản xem trước với cỡ chữ {fontSize}
+          Cỡ chữ {fontSize}
         </Text>
       </View>
     </AppSafeView>
@@ -99,7 +95,6 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 15,
     marginBottom: 20,
-    // Flex row để switch nằm ngang hàng với text
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

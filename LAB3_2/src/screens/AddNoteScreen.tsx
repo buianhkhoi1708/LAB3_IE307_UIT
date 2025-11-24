@@ -1,6 +1,6 @@
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Alert, View } from "react-native";
 import React, { useState } from "react";
-import { AppLightColor } from "../styles/color";
+import { AppDarkColor, AppLightColor } from "../styles/color";
 import AppSafeView from "../components/AppSafeView";
 import { useSQLiteContext } from "expo-sqlite";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +9,13 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { AppTextInput } from "../components/AppTextInput";
 import { useAppTheme } from "../store/useAppTheme";
 import { useStore } from "../store/useStore";
+
+const showAlert = () =>
+  Alert.alert(
+    'Warning',
+    'Please enter a title!',
+  );
+
 
 const AddNoteScreen = () => {
   const colors = useAppTheme();
@@ -22,6 +29,10 @@ const AddNoteScreen = () => {
 
   const handleSavePress = async () => {
     try {
+      if (title === '') {
+        showAlert();
+        return;
+      }
       await db.runAsync("INSERT INTO notes (title, content) VALUES (?, ?)", [
         title,
         content,
@@ -39,31 +50,31 @@ const AddNoteScreen = () => {
 
   return (
     <AppSafeView
-      style={[styles.container, { backgroundColor: colors.bgColor }]}
+      style={[{ backgroundColor: colors.bgColor }]}
     >
       <AppTextInput
         text="Enter your title"
         value={title}
         onText={(text) => setTitle(text)}
-        style={[{ color: colors.primary_text, fontSize: fontSize }, styles.textinput]}
+        style={[{ color: colors.primary_text, fontSize: fontSize }, styles.textinput1]}
       />
       <AppTextInput
         text="Enter your content"
         value={content}
         onText={(text) => setContent(text)}
-        style={[{ color: colors.primary_text, fontSize: fontSize}]}
+        style={[styles.textinput, { color: colors.primary_text, fontSize: fontSize}]}
       />
 
       <View style={styles.container1}>
         <AppButton onPress={handleSavePress} style={[styles.but, styles.but1]}>
-          <Entypo name="check" size={24} color="white" />
+          <Entypo name="check" size={24} color={AppDarkColor.iconColor} />
         </AppButton>
 
         <AppButton
           onPress={handleCanclePress}
           style={[styles.but, styles.but2]}
         >
-          <Entypo name="cross" size={24} color="white" />
+          <Entypo name="cross" size={24} color={AppDarkColor.iconColor} />
         </AppButton>
       </View>
     </AppSafeView>
@@ -79,15 +90,21 @@ const styles = StyleSheet.create({
     gap: 10,
     justifyContent: "center",
   },
+  textinput: {
+    height: 200,
+  },
+  textinput1: {
+    height: 100,
+  },
 
   but: {
     height: 65,
     width: 65,
   },
   but1: {
-    backgroundColor: "green",
+    backgroundColor: AppLightColor.button2Color,
   },
   but2: {
-    backgroundColor: "red",
+    backgroundColor: AppLightColor.button1Color,
   },
 });

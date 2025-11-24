@@ -1,12 +1,15 @@
 
 export const AppLightColor = {
-  bgColor: "#FFFFFF",           // Nền chính
-  cardBg: "#F5F5F5",            // Nền thẻ/item
-  primary_text: "#000000",      // Chữ chính
-  textSecondary: "#666666",     // Chữ phụ
-  headerBg: "#FFFFFF",          // <--- Màu nền Header
-  headerText: "#000000",        // <--- Màu chữ Header
-  iconColor: "#000000",         // Màu icon
+  bgColor: "#FFFFFF",         
+  cardBg: "#F5F5F5",            
+  primary_text: "#000000",      
+  textSecondary: "#666666",   
+  headerBg: "#FFFFFF",          
+  headerText: "#000000",       
+  iconColor: "#000000", 
+  button1Color: "red",
+  button2Color: "green", 
+  borderColor: "#b0b0b0ff",   
 };
 
 export const AppDarkColor = {
@@ -14,7 +17,7 @@ export const AppDarkColor = {
   cardBg: "#1E1E1E",
   primary_text: "#FFFFFF",
   textSecondary: "#AAAAAA",
-  headerBg: "#424242ff",          // <--- Header màu tối hơn nền một chút cho đẹp
+  headerBg: "#424242ff",        
   headerText: "#FFFFFF",
   iconColor: "#FFFFFF",
 };

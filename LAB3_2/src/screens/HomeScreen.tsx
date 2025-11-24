@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
 
   container2: {
     paddingHorizontal: 15,
+    width: '80%',
   },
 
   text1: {},
